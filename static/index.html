@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lab 6 - Grades</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Grades Manager</h1>
+      <p class="subtitle">CSE 108 – Lab 6</p>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>All Students</h2>
+        <div class="actions">
+          <button id="refreshAll">Refresh</button>
+        </div>
+        <div class="table-wrapper">
+          <table id="allTable" aria-label="All students and grades">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Grade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- filled by JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="panel">
+          <h2>Find Grade by Name</h2>
+          <form id="getForm">
+            <label>
+              Student Name
+              <input id="getName" name="name" type="text" required />
+            </label>
+            <button type="submit">Get Grade</button>
+          </form>
+          <div class="table-wrapper compact">
+            <table id="oneTable" aria-label="Single student grade">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Grade</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- filled by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Create Student</h2>
+          <form id="createForm">
+            <label>
+              Student Name
+              <input id="createName" name="name" type="text" required />
+            </label>
+            <label>
+              Grade
+              <input id="createGrade" name="grade" type="number" step="0.01" min="0" max="100" required />
+            </label>
+            <button type="submit">Create</button>
+          </form>
+        </div>
+
+        <div class="panel">
+          <h2>Edit Grade</h2>
+          <form id="updateForm">
+            <label>
+              Student Name
+              <input id="updateName" name="name" type="text" required />
+            </label>
+            <label>
+              New Grade
+              <input id="updateGrade" name="grade" type="number" step="0.01" min="0" max="100" required />
+            </label>
+            <button type="submit">Update</button>
+          </form>
+        </div>
+
+        <div class="panel">
+          <h2>Delete Student</h2>
+          <form id="deleteForm">
+            <label>
+              Student Name
+              <input id="deleteName" name="name" type="text" required />
+            </label>
+            <button class="danger" type="submit">Delete</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Messages</h2>
+        <div id="messages" role="status" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Backend API: <code>http://localhost:5000</code>
+      </p>
+      <p class="hint">
+        Names are case sensitive; use %20 for spaces in URLs. POST/PUT use
+        Content-Type: application/json
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+  </html>
+
+
